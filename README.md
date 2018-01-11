@@ -1,5 +1,5 @@
 # php-json-to-array
-Convert JSON object to PHP array
+Convert JSON object to PHP array or render array as PHP code
 
 ## Usage
     require 'src.php';
