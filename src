@@ -18,3 +18,28 @@ function obj2Array($value) {
     
     return $result;
 }
+
+function getCode(array $arr, $depth = 0) {
+    $depth++;
+    $result = '[';
+    foreach($arr as $key => $val) {
+        if (is_array($val)) {
+            $result .= sprintf('%s => %s', getPropertyCode($key), getCode($val, $depth));
+        } else {
+            $result .= sprintf('%s => %s,', getPropertyCode($key), getPropertyCode($val));
+        }
+    }
+    return sprintf('%s]%s', $result, $depth !== 1 ? ',' : '');
+}
+
+function getPropertyCode($property) {
+    if (is_string($property)) {
+        return sprintf('"%s"', $property);
+    } elseif (is_bool($property)) {
+        return sprintf('%s', $property ? 'TRUE' : 'FALSE');
+    } elseif (is_numeric($property)) {
+        return $property;
+    } else {
+        throw Exception(sprintf('Undefined property type: %s', $property));
+    }
+}
