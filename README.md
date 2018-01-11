@@ -8,11 +8,12 @@ Convert JSON object to PHP array
        "properties":{  
           "url":"https://github.com/matejbukovsky/php-json-to-array",
           "convert":true
-       }
+       },
+       "test": ["first", "second", 0]
     }';
+## Convert stdClass object to PHP array
     var_dump(convert($json));
     
-## RESULT
     array(2) {
       ["hello"]=>
       string(5) "world"
@@ -24,3 +25,21 @@ Convert JSON object to PHP array
         bool(true)
       }
     }
+## Return PHP code
+    echo getCode(convert($json));
+    
+    [
+        "hello" => "world",
+        "properties" => [
+            "url" => "https://github.com/matejbukovsky/php-json-to-array",
+            "convert" => TRUE,
+        ],
+        "test" => [
+            0 => "first",
+            1 => "secons",
+            2 => 0,
+        ],
+    ];
+    
+## Demo
+[phpFiddle](http://phpfiddle.org/main/code/5t9v-rxnf)
