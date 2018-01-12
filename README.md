@@ -1,4 +1,4 @@
-# php-json-to-array
+# php-json-to-array-to-code
 Convert JSON object to PHP array or render array as PHP code
 
 ## Usage
