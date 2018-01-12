@@ -11,7 +11,7 @@ Convert JSON object to PHP array or render array as PHP code
        },
        "test": ["first", "second", 0]
     }';
-## Convert stdClass object to PHP array
+## Convert stdClass (decoded JSON) object to PHP array
     var_dump(convert($json));
     
     array(2) {
