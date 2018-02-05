@@ -39,6 +39,8 @@ function getPropertyCode($property) {
         return sprintf('%s', $property ? 'TRUE' : 'FALSE');
     } elseif (is_numeric($property)) {
         return $property;
+    } elseif (is_null($property)) {
+        return 'NULL';
     } else {
         throw Exception(sprintf('Undefined property type: %s', $property));
     }
