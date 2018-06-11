@@ -1,24 +1,3 @@
-function convert(string $json) {
-    return obj2Array(json_decode($json));
-}
-
-function obj2Array($value) {
-    $result = [];
-    if ($value instanceof stdClass) {
-        $value = (array) $value;    
-    }
-    
-    foreach ($value as $key => $val) {
-        if ($val instanceof stdClass || is_array($val)) {
-            $result[$key] = obj2Array($val);
-        } else {
-            $result[$key] = $val;
-        }
-    }
-    
-    return $result;
-}
-
 function getCode(array $arr, $depth = 0) {
     $depth++;
     $result = '[';
