@@ -13,25 +13,9 @@ $json = '{
    "test": ["first", "second", 0]
 }';
 ```
-## Convert stdClass (decoded JSON) object to PHP array
-```php
-var_dump(convert($json));
-    
-array(2) {
-  ["hello"]=>
-  string(5) "world"
-  ["properties"]=>
-  array(2) {
-    ["url"]=>
-    string(50) "https://github.com/matejbukovsky/php-json-to-array"
-    ["convert"]=>
-    bool(true)
-  }
-}
-```
 ## Return PHP code
 ```php
-echo getCode(convert($json));
+echo getCode(json_decode($json, TRUE));
 
 [
     "hello" => "world",
@@ -47,4 +31,4 @@ echo getCode(convert($json));
 ];
 ```
 ## Demo
-[phpFiddle](http://phpfiddle.org/main/code/5t9v-rxnf)
+[phpFiddle](http://phpfiddle.org/main/code/d6hy-8q53)
