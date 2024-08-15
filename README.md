@@ -30,5 +30,5 @@ echo getCode(json_decode($json, TRUE));
     ],
 ];
 ```
-## Demo
-[phpFiddle](http://phpfiddle.org/main/code/d6hy-8q53)
+
+[Try it - Demo](https://www.matej-bukovsky.cz/json-to-php-code.php)
